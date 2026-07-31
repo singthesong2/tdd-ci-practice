@@ -6,6 +6,7 @@ function check(name, run, expected) {
     throw new Error("${name}:${actual}!==${expected}");
   }
   console.log("PASS", name);
+  console.log("PASS", name);
 }
 
 check("1과 2를 더하면 3", () => sum(1, 2), 3);
