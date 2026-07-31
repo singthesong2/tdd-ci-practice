@@ -2,26 +2,26 @@ name: PR check
 
 on:
  pull_request:
-  branches:[main]
+  branches: [main]
 
 permissions:
- contents: red
+ contents: read
 
 jobs:
  quality:
   runs-on:ubuntu-latest
   steps:
-   -name:Checkout
+   - name:Checkout
    uses:actions/checkout@v6
 
-   -name:Setup Node 24
-    use:actions/setup-node@v6
+   - name:Setup Node 24
+    uses:actions/setup-node@v6
     with:
-     node-version:24
+     node-version: 24
      cache:npm
 
-     -name:Install
+     - name:Install
      run:npm ci
 
-     -name:Test
+     - name:Test
      run:npm test
